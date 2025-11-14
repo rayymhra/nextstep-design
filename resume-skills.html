@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextStep – Resume Skills</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Left Panel */
+        .left-panel {
+            width: 55%;
+            background: white;
+            padding: 40px 60px;
+            overflow-y: auto;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .step-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .step-subtitle {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .skill-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-input {
+            width: 230px;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: #f1f5f9;
+            font-size: 14px;
+        }
+
+        input.skill-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: white;
+        }
+
+        .add-btn {
+            padding: 10px 14px;
+            background: #e0f2fe;
+            color: #0369a1;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .add-btn:hover {
+            background: #bae6fd;
+        }
+
+        .btn-next {
+            width: 100%;
+            margin-top: 40px;
+            padding: 14px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-next:hover {
+            background: #2563eb;
+        }
+
+        /* Right Panel */
+        .right-panel {
+            width: 45%;
+            background: #f1f5f9;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .preview-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .preview-box {
+            width: 80%;
+            height: 85%;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+        <div class="step-title">Skills & Tools</div>
+        <div class="step-subtitle">Step 3 of 4 — Highlight your strengths</div>
+
+        <!-- TECHNICAL SKILLS -->
+        <div class="section-title">Technical Skills</div>
+        <div class="skill-box">
+            <input type="text" class="skill-input" placeholder="e.g. HTML">
+            <input type="text" class="skill-input" placeholder="e.g. CSS">
+            <input type="text" class="skill-input" placeholder="e.g. JavaScript">
+        </div>
+        <button class="add-btn" style="margin-top:10px;">+ Add Technical Skill</button>
+
+        <!-- SOFT SKILLS -->
+        <div class="section-title">Soft Skills</div>
+        <div class="skill-box">
+            <input type="text" class="skill-input" placeholder="e.g. Communication">
+            <input type="text" class="skill-input" placeholder="e.g. Problem Solving">
+        </div>
+        <button class="add-btn" style="margin-top:10px;">+ Add Soft Skill</button>
+
+        <!-- TOOLS -->
+        <div class="section-title">Tools & Software</div>
+        <div class="skill-box">
+            <input type="text" class="skill-input" placeholder="e.g. Git">
+            <input type="text" class="skill-input" placeholder="e.g. Figma">
+        </div>
+        <button class="add-btn" style="margin-top:10px;">+ Add Tool</button>
+
+        <button class="btn-next">Next → Choose Template</button>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+        <div class="preview-title">Live Preview</div>
+
+        <div class="preview-box">
+            Your resume skills will appear here.
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PurplePath - Your Gateway to Career Success</title>
+    <title>NextStep - Your Gateway to Career Success</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -11,29 +11,32 @@
                 extend: {
                     colors: {
                         primary: {
-                            50: '#f5f3ff',
-                            100: '#ede9fe',
-                            200: '#ddd6fe',
-                            300: '#c4b5fd',
-                            400: '#a78bfa',
-                            500: '#8b5cf6',
-                            600: '#7c3aed',
-                            700: '#6d28d9',
-                            800: '#5b21b6',
-                            900: '#4c1d95',
+                            50: '#f0f7ff',
+                            100: '#e0f0ff',
+                            200: '#bae0ff',
+                            300: '#7cc4ff',
+                            400: '#38a5ff',
+                            500: '#005EB8',
+                            600: '#004e9a',
+                            700: '#003e7c',
+                            800: '#002e5e',
+                            900: '#001e40',
                         },
                         secondary: {
-                            50: '#faf5ff',
-                            100: '#f3e8ff',
-                            200: '#e9d5ff',
-                            300: '#d8b4fe',
-                            400: '#c084fc',
-                            500: '#a855f7',
-                            600: '#9333ea',
-                            700: '#7e22ce',
-                            800: '#6b21a8',
-                            900: '#581c87',
+                            50: '#fff5f0',
+                            100: '#ffe8e0',
+                            200: '#ffd1c2',
+                            300: '#ffb094',
+                            400: '#ff8a66',
+                            500: '#FF6B35',
+                            600: '#e05a2a',
+                            700: '#c1491f',
+                            800: '#a23814',
+                            900: '#832709',
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
                     }
                 }
             }
@@ -41,26 +44,52 @@
     </script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #005EB8 0%, #FF6B35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-padding {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        html {
+scroll-behavior: smooth;
+}
+    </style>
 </head>
 <body class="font-sans bg-white text-gray-900 antialiased">
     <!-- Navbar -->
-    <nav class="fixed w-full bg-white/80 backdrop-blur-lg border-b border-gray-200 z-50">
+    <nav class="fixed w-full bg-white/95 backdrop-blur-lg border-b border-gray-200 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <a href="#" class="flex items-center text-2xl font-bold text-primary-700">
-                    <i data-feather="trending-up" class="mr-2"></i>PurplePath
+                <a href="#" class="flex items-center text-2xl font-bold text-primary-500">
+                            <img src="assets/img/logo.png" alt="NextStep Logo" class="w-auto h-7">
+
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Features</a>
-                    <a href="#cv-maker" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">CV Maker</a>
-                    <a href="#academy" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Academy</a>
-                    <a href="#advisor" class="text-gray-700 hover:text-primary-600 font-medium transition-colors">Advisor</a>
+                    <a href="#features" class="text-gray-700 hover:text-primary-500 font-medium transition-colors">Features</a>
+                    <a href="#cv-maker" class="text-gray-700 hover:text-primary-500 font-medium transition-colors">CV Maker</a>
+                    <a href="#academy" class="text-gray-700 hover:text-primary-500 font-medium transition-colors">Academy</a>
+                    <a href="#advisor" class="text-gray-700 hover:text-primary-500 font-medium transition-colors">Advisor</a>
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="#" class="hidden sm:inline-block px-4 py-2 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-50 transition-colors font-medium">Sign In</a>
-                    <a href="#cta" class="px-4 py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-full font-medium hover:shadow-lg transition-all">Get Started</a>
+                    <a href="#cta" class="px-4 py-2 bg-primary-500 text-white rounded-full font-medium hover:bg-primary-600 transition-all shadow-sm hover:shadow-md">Get Started</a>
                 </div>
             </div>
         </div>
@@ -69,25 +98,25 @@
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto text-center">
-            <span class="inline-block px-3 py-1 text-sm font-semibold text-primary-600 bg-primary-100 rounded-full mb-4">CAREER PLATFORM</span>
-            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-600">gateway</span> to success</h1>
-            <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">Build professional CVs, learn in-demand skills, and get AI-powered guidance—all in one magical place.</p>
+            <span class="inline-block px-3 py-1 text-sm font-semibold text-primary-600 bg-primary-50 rounded-full mb-4">CAREER PLATFORM</span>
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">Your <span class="gradient-text">Gateway</span> to Career Success</h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">Build professional CVs, learn in-demand skills, and get AI-powered guidance—all in one place.</p>
             <div class="flex flex-wrap justify-center gap-4 mb-16">
-                <a href="#cv-maker" class="px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full font-medium hover:shadow-lg transition-all transform hover:scale-105">Create Your CV</a>
-                <a href="#academy" class="px-8 py-3 border-2 border-primary-600 text-primary-600 rounded-full font-medium hover:bg-primary-50 transition-colors">Explore Courses</a>
+                <a href="#cv-maker" class="px-8 py-3 bg-primary-500 text-white rounded-full font-medium hover:bg-primary-600 transition-all transform hover:scale-105 shadow-sm hover:shadow-md">Create Your CV</a>
+                <a href="#academy" class="px-8 py-3 border-2 border-primary-500 text-primary-500 rounded-full font-medium hover:bg-primary-50 transition-colors">Explore Courses</a>
             </div>
             
             <div class="flex flex-col sm:flex-row justify-center gap-8 sm:gap-16 pt-8 border-t border-gray-200">
                 <div class="text-center">
-                    <div class="text-4xl font-bold text-primary-700 mb-1">10K+</div>
+                    <div class="text-4xl font-bold text-primary-500 mb-1">10K+</div>
                     <div class="text-gray-500">Active Users</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl font-bold text-primary-700 mb-1">500+</div>
+                    <div class="text-4xl font-bold text-primary-500 mb-1">500+</div>
                     <div class="text-gray-500">Curated Courses</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl font-bold text-primary-700 mb-1">50+</div>
+                    <div class="text-4xl font-bold text-primary-500 mb-1">50+</div>
                     <div class="text-gray-500">CV Templates</div>
                 </div>
             </div>
@@ -97,73 +126,73 @@
     <!-- Features Section -->
     <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div class="max-w-4xl mx-auto text-center mb-16">
-            <span class="inline-block px-3 py-1 text-sm font-semibold text-primary-600 bg-primary-100 rounded-full mb-4">OUR PLATFORM</span>
+            <span class="inline-block px-3 py-1 text-sm font-semibold text-primary-600 bg-primary-50 rounded-full mb-4">OUR PLATFORM</span>
             <h2 class="text-4xl font-bold text-gray-900 mb-4">Everything you need to succeed</h2>
             <p class="text-xl text-gray-600">Three powerful tools designed to accelerate your career growth</p>
         </div>
         
         <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary-50 text-primary-600 mb-6">
+            <div class="bg-white p-8 rounded-xl shadow-sm card-hover border border-gray-100">
+                <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary-50 text-primary-500 mb-6">
                     <i data-feather="file-text" class="w-6 h-6"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">CV & Portfolio Builder</h3>
                 <p class="text-gray-600 mb-6">Create professional documents that stand out with our intuitive builder and expert templates.</p>
                 <ul class="space-y-3">
                     <li class="flex items-start text-gray-600">
-                        <i data-feather="check" class="text-primary-600 mr-2 mt-0.5"></i>
+                        <i data-feather="check" class="text-primary-500 mr-2 mt-0.5"></i>
                         <span>Multiple document types</span>
                     </li>
                     <li class="flex items-start text-gray-600">
-                        <i data-feather="check" class="text-primary-600 mr-2 mt-0.5"></i>
+                        <i data-feather="check" class="text-primary-500 mr-2 mt-0.5"></i>
                         <span>50+ premium templates</span>
                     </li>
                     <li class="flex items-start text-gray-600">
-                        <i data-feather="check" class="text-primary-600 mr-2 mt-0.5"></i>
+                        <i data-feather="check" class="text-primary-500 mr-2 mt-0.5"></i>
                         <span>One-click PDF export</span>
                     </li>
                 </ul>
             </div>
             
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary-50 text-primary-600 mb-6">
+            <div class="bg-white p-8 rounded-xl shadow-sm card-hover border border-gray-100">
+                <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary-50 text-primary-500 mb-6">
                     <i data-feather="book" class="w-6 h-6"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">PurplePath Academy</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">NextStep Academy</h3>
                 <p class="text-gray-600 mb-6">Access curated courses from top platforms to build the skills employers are actively seeking.</p>
                 <ul class="space-y-3">
                     <li class="flex items-start text-gray-600">
-                        <i data-feather="check" class="text-primary-600 mr-2 mt-0.5"></i>
+                        <i data-feather="check" class="text-primary-500 mr-2 mt-0.5"></i>
                         <span>500+ verified courses</span>
                     </li>
                     <li class="flex items-start text-gray-600">
-                        <i data-feather="check" class="text-primary-600 mr-2 mt-0.5"></i>
+                        <i data-feather="check" class="text-primary-500 mr-2 mt-0.5"></i>
                         <span>Free & premium options</span>
                     </li>
                     <li class="flex items-start text-gray-600">
-                        <i data-feather="check" class="text-primary-600 mr-2 mt-0.5"></i>
+                        <i data-feather="check" class="text-primary-500 mr-2 mt-0.5"></i>
                         <span>Progress tracking</span>
                     </li>
                 </ul>
             </div>
             
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary-50 text-primary-600 mb-6">
+            <div class="bg-white p-8 rounded-xl shadow-sm card-hover border border-gray-100">
+                <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary-50 text-primary-500 mb-6">
                     <i data-feather="zap" class="w-6 h-6"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Career Advisor</h3>
                 <p class="text-gray-600 mb-6">Get instant, personalized career guidance powered by advanced AI—available 24/7.</p>
                 <ul class="space-y-3">
                     <li class="flex items-start text-gray-600">
-                        <i data-feather="check" class="text-primary-600 mr-2 mt-0.5"></i>
+                        <i data-feather="check" class="text-primary-500 mr-2 mt-0.5"></i>
                         <span>Intelligent responses</span>
                     </li>
                     <li class="flex items-start text-gray-600">
-                        <i data-feather="check" class="text-primary-600 mr-2 mt-0.5"></i>
+                        <i data-feather="check" class="text-primary-500 mr-2 mt-0.5"></i>
                         <span>Interview prep tips</span>
                     </li>
                     <li class="flex items-start text-gray-600">
-                        <i data-feather="check" class="text-primary-600 mr-2 mt-0.5"></i>
+                        <i data-feather="check" class="text-primary-500 mr-2 mt-0.5"></i>
                         <span>Career path guidance</span>
                     </li>
                 </ul>
@@ -172,33 +201,33 @@
     </section>
 
     <!-- CV Maker Detail Section -->
-    <section id="cv-maker" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 to-secondary-50">
+    <section id="cv-maker" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 to-blue-50">
         <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-sm overflow-hidden">
             <div class="md:flex">
                 <div class="md:w-1/2 p-10 md:p-12">
-                    <span class="inline-block px-3 py-1 text-sm font-semibold text-primary-600 bg-primary-100 rounded-full mb-4">CV BUILDER</span>
+                    <span class="inline-block px-3 py-1 text-sm font-semibold text-primary-600 bg-primary-50 rounded-full mb-4">CV BUILDER</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Build your professional identity</h2>
                     <p class="text-lg text-gray-600 mb-8">Choose the perfect document type for your career stage and customize it to showcase your unique strengths.</p>
-                    <a href="#" class="inline-block px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full font-medium hover:shadow-lg transition-all">Start Building</a>
+                    <a href="create.html" class="inline-block px-8 py-3 bg-primary-500 text-white rounded-full font-medium hover:bg-primary-600 transition-all shadow-sm hover:shadow-md">Start Building</a>
                 </div>
                 <div class="md:w-1/2 p-8 bg-gray-50">
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors">
+                        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors card-hover">
                             <h3 class="font-bold text-lg text-gray-900 mb-2">CV</h3>
                             <p class="text-gray-600 text-sm mb-3">Comprehensive academic and professional history</p>
                             <span class="inline-block px-2 py-1 text-xs font-medium text-secondary-700 bg-secondary-100 rounded">For Academics</span>
                         </div>
-                        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors">
+                        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors card-hover">
                             <h3 class="font-bold text-lg text-gray-900 mb-2">Resume</h3>
                             <p class="text-gray-600 text-sm mb-3">Concise, targeted summary of experience</p>
                             <span class="inline-block px-2 py-1 text-xs font-medium text-secondary-700 bg-secondary-100 rounded">For Job Seekers</span>
                         </div>
-                        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors">
+                        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors card-hover">
                             <h3 class="font-bold text-lg text-gray-900 mb-2">Portfolio</h3>
                             <p class="text-gray-600 text-sm mb-3">Visual showcase of projects and work</p>
                             <span class="inline-block px-2 py-1 text-xs font-medium text-secondary-700 bg-secondary-100 rounded">For Creatives</span>
                         </div>
-                        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors">
+                        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors card-hover">
                             <h3 class="font-bold text-lg text-gray-900 mb-2">Cover Letter</h3>
                             <p class="text-gray-600 text-sm mb-3">Personalized introduction to employers</p>
                             <span class="inline-block px-2 py-1 text-xs font-medium text-secondary-700 bg-secondary-100 rounded">For Applications</span>
@@ -214,10 +243,10 @@
         <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-sm overflow-hidden">
             <div class="md:flex flex-row-reverse">
                 <div class="md:w-1/2 p-10 md:p-12">
-                    <span class="inline-block px-3 py-1 text-sm font-semibold text-primary-600 bg-primary-100 rounded-full mb-4">ACADEMY</span>
+                    <span class="inline-block px-3 py-1 text-sm font-semibold text-primary-600 bg-primary-50 rounded-full mb-4">ACADEMY</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Learn skills that matter</h2>
                     <p class="text-lg text-gray-600 mb-8">Access hand-picked courses from industry leaders. Filter by cost, skill level, and topic to find your perfect learning path.</p>
-                    <a href="#" class="inline-block px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full font-medium hover:shadow-lg transition-all">Browse Courses</a>
+                    <a href="#" class="inline-block px-8 py-3 bg-primary-500 text-white rounded-full font-medium hover:bg-primary-600 transition-all shadow-sm hover:shadow-md">Browse Courses</a>
                 </div>
                 <div class="md:w-1/2 p-8 bg-gray-50">
                     <div class="flex flex-wrap gap-3">
@@ -236,41 +265,41 @@
     </section>
 
     <!-- Career Advisor Detail Section -->
-    <section id="advisor" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 to-secondary-50">
+    <section id="advisor" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 to-blue-50">
         <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-sm overflow-hidden">
             <div class="md:flex">
                 <div class="md:w-1/2 p-10 md:p-12">
-                    <span class="inline-block px-3 py-1 text-sm font-semibold text-primary-600 bg-primary-100 rounded-full mb-4">AI ADVISOR</span>
+                    <span class="inline-block px-3 py-1 text-sm font-semibold text-primary-600 bg-primary-50 rounded-full mb-4">AI ADVISOR</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Your personal career coach</h2>
                     <p class="text-lg text-gray-600 mb-8">Ask anything about your career journey. Our AI advisor provides tailored guidance based on your goals and experience.</p>
-                    <a href="#" class="inline-block px-8 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-full font-medium hover:shadow-lg transition-all">Start Chatting</a>
+                    <a href="#" class="inline-block px-8 py-3 bg-primary-500 text-white rounded-full font-medium hover:bg-primary-600 transition-all shadow-sm hover:shadow-md">Start Chatting</a>
                 </div>
                 <div class="md:w-1/2 p-8 bg-gray-50">
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white p-5 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors">
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors card-hover">
                             <div class="flex items-center mb-2">
-                                <i data-feather="message-square" class="text-primary-600 mr-2"></i>
+                                <i data-feather="message-square" class="text-primary-500 mr-2"></i>
                                 <h3 class="font-bold text-gray-900">Resume Tips</h3>
                             </div>
                             <p class="text-gray-600 text-sm">"What should I highlight for a tech role?"</p>
                         </div>
-                        <div class="bg-white p-5 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors">
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors card-hover">
                             <div class="flex items-center mb-2">
-                                <i data-feather="message-square" class="text-primary-600 mr-2"></i>
+                                <i data-feather="message-square" class="text-primary-500 mr-2"></i>
                                 <h3 class="font-bold text-gray-900">Interview Prep</h3>
                             </div>
                             <p class="text-gray-600 text-sm">"How do I ace behavioral questions?"</p>
                         </div>
-                        <div class="bg-white p-5 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors">
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors card-hover">
                             <div class="flex items-center mb-2">
-                                <i data-feather="message-square" class="text-primary-600 mr-2"></i>
+                                <i data-feather="message-square" class="text-primary-500 mr-2"></i>
                                 <h3 class="font-bold text-gray-900">Skill Building</h3>
                             </div>
                             <p class="text-gray-600 text-sm">"What skills are most in-demand?"</p>
                         </div>
-                        <div class="bg-white p-5 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors">
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 hover:border-primary-300 transition-colors card-hover">
                             <div class="flex items-center mb-2">
-                                <i data-feather="message-square" class="text-primary-600 mr-2"></i>
+                                <i data-feather="message-square" class="text-primary-500 mr-2"></i>
                                 <h3 class="font-bold text-gray-900">Career Switch</h3>
                             </div>
                             <p class="text-gray-600 text-sm">"How do I transition to a new field?"</p>
@@ -282,12 +311,12 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="cta" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-primary-700 to-secondary-700">
+    <section id="cta" class="py-20 px-4 sm:px-6 lg:px-8 bg-primary-500">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to transform your career?</h2>
             <p class="text-xl text-primary-100 mb-10">Join thousands of professionals who have already taken their next step</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#" class="px-8 py-3 bg-white text-primary-700 rounded-full font-bold hover:shadow-lg transition-all transform hover:scale-105">Get Started Free</a>
+                <a href="#" class="px-8 py-3 bg-white text-primary-500 rounded-full font-bold hover:shadow-lg transition-all transform hover:scale-105">Get Started Free</a>
                 <a href="#" class="px-8 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white/10 transition-colors">Learn More</a>
             </div>
         </div>
@@ -298,18 +327,18 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
                 <div class="col-span-2">
-                    <a href="#" class="flex items-center text-2xl font-bold text-primary-700 mb-4">
-                        <i data-feather="trending-up" class="mr-2"></i>PurplePath
+                    <a href="#" class="flex items-center text-2xl font-bold text-primary-500 mb-4">
+                        <i data-feather="trending-up" class="mr-2"></i>NextStep
                     </a>
                     <p class="text-gray-600 mb-6">Your gateway to the next step of your career.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-primary-600 hover:text-white transition-colors">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-primary-500 hover:text-white transition-colors">
                             <i data-feather="twitter" class="w-5 h-5"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-primary-600 hover:text-white transition-colors">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-primary-500 hover:text-white transition-colors">
                             <i data-feather="linkedin" class="w-5 h-5"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-primary-600 hover:text-white transition-colors">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-700 hover:bg-primary-500 hover:text-white transition-colors">
                             <i data-feather="instagram" class="w-5 h-5"></i>
                         </a>
                     </div>
@@ -317,34 +346,34 @@
                 <div>
                     <h6 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Product</h6>
                     <ul class="space-y-3">
-                        <li><a href="#features" class="text-gray-600 hover:text-primary-600 transition-colors">Features</a></li>
-                        <li><a href="#cv-maker" class="text-gray-600 hover:text-primary-600 transition-colors">CV Maker</a></li>
-                        <li><a href="#academy" class="text-gray-600 hover:text-primary-600 transition-colors">Academy</a></li>
-                        <li><a href="#advisor" class="text-gray-600 hover:text-primary-600 transition-colors">Career Advisor</a></li>
+                        <li><a href="#features" class="text-gray-600 hover:text-primary-500 transition-colors">Features</a></li>
+                        <li><a href="#cv-maker" class="text-gray-600 hover:text-primary-500 transition-colors">CV Maker</a></li>
+                        <li><a href="#academy" class="text-gray-600 hover:text-primary-500 transition-colors">Academy</a></li>
+                        <li><a href="#advisor" class="text-gray-600 hover:text-primary-500 transition-colors">Career Advisor</a></li>
                     </ul>
                 </div>
                 <div>
                     <h6 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Company</h6>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-600 hover:text-primary-600 transition-colors">About</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary-600 transition-colors">Careers</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary-600 transition-colors">Blog</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary-600 transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary-500 transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary-500 transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary-500 transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary-500 transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h6 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Support</h6>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-600 hover:text-primary-600 transition-colors">Help Center</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary-600 transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary-600 transition-colors">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-primary-600 transition-colors">Status</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary-500 transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary-500 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary-500 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary-500 transition-colors">Status</a></li>
                     </ul>
                 </div>
             </div>
             <div class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm">&copy; 2023 PurplePath. All rights reserved.</p>
-                <p class="text-gray-500 text-sm mt-4 md:mt-0">Made with <i data-feather="heart" class="w-4 h-4 inline text-primary-600"></i> for career advancement</p>
+                <p class="text-gray-500 text-sm">&copy; 2023 NextStep. All rights reserved.</p>
+                <p class="text-gray-500 text-sm mt-4 md:mt-0">Made with <i data-feather="heart" class="w-4 h-4 inline text-primary-500"></i> for career advancement</p>
             </div>
         </div>
     </footer>
@@ -352,6 +381,5 @@
     <script>
         feather.replace();
     </script>
-    <script src="script.js"></script>
 </body>
 </html>

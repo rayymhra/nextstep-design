@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextStep | Create</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f7ff',
+              100: '#e0f0ff',
+              200: '#bae0ff',
+              300: '#7cc4ff',
+              400: '#38a5ff',
+              500: '#005EB8',
+              600: '#004e9a',
+              700: '#003e7c',
+              800: '#002e5e',
+              900: '#001e40',
+            },
+            secondary: {
+              50: '#fff5f0',
+              100: '#ffe8e0',
+              200: '#ffd1c2',
+              300: '#ffb094',
+              400: '#ff8a66',
+              500: '#FF6B35',
+              600: '#e05a2a',
+              700: '#c1491f',
+              800: '#a23814',
+              900: '#832709',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" href="logo.png">
+  <style>
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .selected-card {
+      border-color: #005EB8;
+      box-shadow: 0 0 0 3px rgba(0, 94, 184, 0.1);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+  <!-- 🌐 Navbar -->
+  <header class="bg-white shadow-sm">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img src="assets/img/logo.png" alt="NextStep Logo" class="w-auto h-7">
+      </div>
+      <ul class="hidden md:flex space-x-6 text-gray-600 font-medium">
+        <li><a href="index.html" class="hover:text-primary-500 transition">Home</a></li>
+        <li><a href="templates.html" class="hover:text-primary-500 transition">Templates</a></li>
+        <li><a href="academy.html" class="hover:text-primary-500 transition">Academy</a></li>
+        <li><a href="career-guide.html" class="hover:text-primary-500 transition">Career Guide</a></li>
+        <li><a href="profile.html" class="hover:text-primary-500 transition">Profile</a></li>
+      </ul>
+      <a href="login.html" class="hidden md:block bg-primary-500 text-white px-4 py-2 rounded-xl shadow hover:bg-primary-600 transition">
+        Logout
+      </a>
+    </nav>
+  </header>
+
+  <!-- 💡 Main Section -->
+  <main class="flex-grow flex flex-col items-center justify-center px-6 py-12">
+    <div class="max-w-3xl text-center mb-12">
+      <span class="inline-block px-3 py-1 text-sm font-semibold text-primary-600 bg-primary-50 rounded-full mb-4">CREATE</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">What would you like to create?</h2>
+      <p class="text-gray-600 text-lg">
+        Choose what you want to build. We'll guide you through each step to help you take your next step in your career.
+      </p>
+    </div>
+
+    <!-- 🧩 Option Cards -->
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl w-full">
+      
+      <!-- CV Card -->
+      <div class="option-card bg-white rounded-2xl shadow-sm card-hover cursor-pointer border-2 border-gray-100" onclick="selectOption('CV')">
+        <div class="p-8 flex flex-col items-center text-center h-full">
+          <div class="w-20 h-20 flex items-center justify-center rounded-full bg-primary-50 text-primary-500 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Curriculum Vitae (CV)</h3>
+          <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+            A detailed overview of your academic and professional journey — perfect for job applications and academic use.
+          </p>
+          <div class="mt-4">
+            <span class="inline-block px-3 py-1 text-xs font-medium text-secondary-700 bg-secondary-100 rounded-full">For Academics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resume Card -->
+      <div class="option-card bg-white rounded-2xl shadow-sm card-hover cursor-pointer border-2 border-gray-100" onclick="selectOption('Resume')">
+        <div class="p-8 flex flex-col items-center text-center h-full">
+          <div class="w-20 h-20 flex items-center justify-center rounded-full bg-primary-50 text-primary-500 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Résumé</h3>
+          <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+            A concise summary highlighting your most relevant skills and experiences — tailored for a specific job.
+          </p>
+          <div class="mt-4">
+            <span class="inline-block px-3 py-1 text-xs font-medium text-secondary-700 bg-secondary-100 rounded-full">For Job Seekers</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Card -->
+      <div class="option-card bg-white rounded-2xl shadow-sm card-hover cursor-pointer border-2 border-gray-100" onclick="selectOption('Portfolio')">
+        <div class="p-8 flex flex-col items-center text-center h-full">
+          <div class="w-20 h-20 flex items-center justify-center rounded-full bg-primary-50 text-primary-500 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">Portfolio</h3>
+          <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+            Showcase your best projects, works, and creative achievements in a visually engaging layout.
+          </p>
+          <div class="mt-4">
+            <span class="inline-block px-3 py-1 text-xs font-medium text-secondary-700 bg-secondary-100 rounded-full">For Creatives</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ✅ Continue Button -->
+    <div class="mt-12">
+      <button id="continueBtn" disabled
+        class="px-8 py-3 bg-gray-300 text-gray-500 font-semibold rounded-xl shadow transition hover:shadow-md disabled:cursor-not-allowed disabled:hover:bg-gray-300">
+        Continue
+      </button>
+    </div>
+  </main>
+
+  <!-- ⚙️ Footer -->
+  <footer class="bg-white shadow-inner py-6 text-center text-gray-500 text-sm">
+    © 2025 NextStep. All rights reserved.
+  </footer>
+
+  <!-- 🧠 Script -->
+  <script>
+    let selected = null;
+    const continueBtn = document.getElementById("continueBtn");
+
+    function selectOption(option) {
+      selected = option;
+      
+      // Remove selection from all cards
+      document.querySelectorAll(".option-card").forEach(card => {
+        card.classList.remove("selected-card", "ring-2", "ring-primary-500");
+        card.classList.add("border-gray-100");
+      });
+      
+      // Add selection to clicked card
+      event.currentTarget.classList.add("selected-card", "ring-2", "ring-primary-500");
+      event.currentTarget.classList.remove("border-gray-100");
+      
+      // Enable continue button
+      continueBtn.disabled = false;
+      continueBtn.classList.remove("bg-gray-300", "text-gray-500");
+      continueBtn.classList.add("bg-primary-500", "text-white", "hover:bg-primary-600");
+    }
+
+    continueBtn.addEventListener("click", () => {
+      if (!selected) return;
+      
+      // Show loading state
+      continueBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Redirecting...
+      `;
+      continueBtn.disabled = true;
+      
+      // Redirect based on selected option
+      setTimeout(() => {
+        if (selected === "CV") window.location.href = "create-cv.html";
+        else if (selected === "Resume") window.location.href = "create-resume.html";
+        else window.location.href = "create-portfolio.html";
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Resume Template</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: #f7f9fc;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    /* HEADER */
+    h1 {
+        font-size: 32px;
+        margin-bottom: 16px;
+        color: #1a1a1a;
+    }
+
+    p.subtitle {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 40px;
+    }
+
+    /* TEMPLATE GRID */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+    }
+
+    .template-card {
+        background: #fff;
+        padding: 18px;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        transition: 0.25s ease;
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
+
+    .template-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        border-color: #4f46e5;
+    }
+
+    .template-card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 12px;
+    }
+
+    .template-card h3 {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+    }
+
+    /* BUTTON */
+    .back-btn {
+        margin-top: 36px;
+        padding: 10px 20px;
+        background: #e2e8f0;
+        color: #333;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: 0.2s ease;
+        display: inline-block;
+    }
+
+    .back-btn:hover {
+        background: #cbd5e1;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Select a Resume Template</h1>
+    <p class="subtitle">Choose a style you like. You can customize everything after selecting a template.</p>
+
+    <div class="grid">
+        <!-- Template 1 -->
+        <div class="template-card" onclick="selectTemplate('modern')">
+            <img src="https://via.placeholder.com/300x420?text=Modern+Template" alt="Modern Template">
+            <h3>Modern</h3>
+        </div>
+
+        <!-- Template 2 -->
+        <div class="template-card" onclick="selectTemplate('minimalist')">
+            <img src="https://via.placeholder.com/300x420?text=Minimalist+Template" alt="Minimalist Template">
+            <h3>Minimalist</h3>
+        </div>
+
+        <!-- Template 3 -->
+        <div class="template-card" onclick="selectTemplate('corporate')">
+            <img src="https://via.placeholder.com/300x420?text=Corporate+Template" alt="Corporate Template">
+            <h3>Corporate</h3>
+        </div>
+    </div>
+
+    <a href="create-resume.html" class="back-btn">← Back</a>
+</div>
+
+<script>
+    function selectTemplate(name) {
+        // Later you can pass this value to PHP/Laravel session or query
+        alert("You selected the " + name + " template!");
+
+        // Example routing to next page
+        window.location.href = "resume-builder.html?template=" + name;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .header {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .header:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .logo {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .greeting {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(48px, 12vw, 120px);
+            font-weight: 800;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 60px;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+        }
+
+        .input-container {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 20px 70px 20px 30px;
+            font-size: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            color: white;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        input:focus {
+            border-color: rgba(100, 150, 255, 0.5);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .submit-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s;
+        }
+
+        .cursor-dot {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <div class="content">
+
+        <div class="greeting">Hey, I'm Raphael 👋</div>
+        <h1>AI Portfolio</h1>
+
+        <div class="avatar">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="90" fill="#FFD6A5"/>
+                <ellipse cx="75" cy="90" rx="8" ry="12" fill="#333"/>
+                <ellipse cx="125" cy="90" rx="8" ry="12" fill="#333"/>
+                <path d="M 70 110 Q 100 125 130 110" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M 50 50 Q 70 40 90 50" fill="#8B4513"/>
+                <path d="M 110 50 Q 130 40 150 50" fill="#8B4513"/>
+                <ellipse cx="100" cy="45" rx="60" ry="40" fill="#8B4513"/>
+            </svg>
+        </div>
+
+        <div class="input-container">
+            <input type="text" placeholder="Ask me anything...">
+            <button class="submit-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const cursor = document.querySelector('.cursor');
+        const cursorDot = document.querySelector('.cursor-dot');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        class MetaballPoint {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = (Math.random() - 0.5) * 2;
+                this.radius = Math.random() * 40 + 30;
+                this.life = 1;
+                this.color = this.randomColor();
+            }
+
+            randomColor() {
+                const colors = [
+                    { h: 270, s: 80, l: 60 },
+                    { h: 210, s: 80, l: 60 },
+                    { h: 330, s: 80, l: 60 },
+                    { h: 150, s: 70, l: 60 },
+                    { h: 45, s: 90, l: 65 }
+                ];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.vx *= 0.98;
+                this.vy *= 0.98;
+                this.life -= 0.012;
+                this.radius *= 0.985;
+            }
+        }
+
+        const metaballs = [];
+        let mouseX = canvas.width / 2;
+        let mouseY = canvas.height / 2;
+        let lastX = mouseX;
+        let lastY = mouseY;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
+
+            const dx = mouseX - lastX;
+            const dy = mouseY - lastY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance > 15) {
+                metaballs.push(new MetaballPoint(mouseX, mouseY));
+                lastX = mouseX;
+                lastY = mouseY;
+            }
+        });
+
+        function drawMetaballs() {
+            const imageData = ctx.createImageData(canvas.width, canvas.height);
+            const data = imageData.data;
+
+            for (let y = 0; y < canvas.height; y += 4) {
+                for (let x = 0; x < canvas.width; x += 4) {
+                    let sum = 0;
+                    let r = 0, g = 0, b = 0;
+                    let totalWeight = 0;
+
+                    for (let ball of metaballs) {
+                        const dx = x - ball.x;
+                        const dy = y - ball.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        const influence = (ball.radius * ball.radius) / (dist * dist + 1);
+                        
+                        sum += influence * ball.life;
+
+                        if (influence > 0.01) {
+                            const weight = influence * ball.life;
+                            r += ball.color.h * weight;
+                            g += ball.color.s * weight;
+                            b += ball.color.l * weight;
+                            totalWeight += weight;
+                        }
+                    }
+
+                    if (sum > 1) {
+                        const hue = totalWeight > 0 ? r / totalWeight : 270;
+                        const sat = totalWeight > 0 ? g / totalWeight : 80;
+                        const light = totalWeight > 0 ? Math.min(b / totalWeight, 70) : 60;
+                        
+                        const alpha = Math.min(sum * 0.6, 0.8);
+                        const rgb = hslToRgb(hue, sat, light);
+
+                        for (let dy = 0; dy < 4; dy++) {
+                            for (let dx = 0; dx < 4; dx++) {
+                                const px = (x + dx);
+                                const py = (y + dy);
+                                if (px < canvas.width && py < canvas.height) {
+                                    const i = (py * canvas.width + px) * 4;
+                                    data[i] = rgb[0];
+                                    data[i + 1] = rgb[1];
+                                    data[i + 2] = rgb[2];
+                                    data[i + 3] = alpha * 255;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ctx.putImageData(imageData, 0, 0);
+        }
+
+        function hslToRgb(h, s, l) {
+            s /= 100;
+            l /= 100;
+            const c = (1 - Math.abs(2 * l - 1)) * s;
+            const x = c * (1 - Math.abs((h / 60) % 2 - 1));
+            const m = l - c / 2;
+            let r = 0, g = 0, b = 0;
+
+            if (h >= 0 && h < 60) { r = c; g = x; b = 0; }
+            else if (h >= 60 && h < 120) { r = x; g = c; b = 0; }
+            else if (h >= 120 && h < 180) { r = 0; g = c; b = x; }
+            else if (h >= 180 && h < 240) { r = 0; g = x; b = c; }
+            else if (h >= 240 && h < 300) { r = x; g = 0; b = c; }
+            else if (h >= 300 && h < 360) { r = c; g = 0; b = x; }
+
+            return [
+                Math.round((r + m) * 255),
+                Math.round((g + m) * 255),
+                Math.round((b + m) * 255)
+            ];
+        }
+
+        function animate() {
+            ctx.fillStyle = 'rgba(10, 10, 15, 0.15)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = metaballs.length - 1; i >= 0; i--) {
+                metaballs[i].update();
+                if (metaballs[i].life <= 0 || metaballs[i].radius < 10) {
+                    metaballs.splice(i, 1);
+                }
+            }
+
+            if (metaballs.length > 0) {
+                drawMetaballs();
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>

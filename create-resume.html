@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextStep – Create Resume</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Left Form Section */
+        .left-panel {
+            width: 55%;
+            background: white;
+            padding: 40px 60px;
+            overflow-y: auto;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .step-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .step-subtitle {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 32px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #f1f5f9;
+            transition: 0.2s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: white;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .btn-next {
+            width: 100%;
+            padding: 14px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: 0.2s;
+        }
+
+        .btn-next:hover {
+            background: #2563eb;
+        }
+
+        /* Right Preview Section */
+        .right-panel {
+            width: 45%;
+            background: #f1f5f9;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .preview-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .preview-box {
+            width: 80%;
+            height: 85%;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+        <div class="step-title">Create Your Resume</div>
+        <div class="step-subtitle">Step 1 of 4 — Personal & Professional Summary</div>
+
+        <form>
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="e.g. Rayya Mahira">
+            </div>
+
+            <div class="input-group">
+                <label>Professional Headline</label>
+                <input type="text" placeholder="e.g. Software Engineer • Backend Developer">
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" placeholder="example@mail.com">
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="text" placeholder="+62 xxx xxxx">
+            </div>
+
+            <div class="input-group">
+                <label>LinkedIn / Portfolio URL</label>
+                <input type="text" placeholder="https://linkedin.com/in/...">
+            </div>
+
+            <div class="input-group">
+                <label>Professional Summary</label>
+                <textarea placeholder="A brief 2–3 sentence summary of your strengths and career goals..."></textarea>
+            </div>
+
+            <button class="btn-next">Next → Experience & Skills</button>
+        </form>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+        <div class="preview-title">Live Preview</div>
+
+        <div class="preview-box">
+            Resume Preview (template will update here)
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
