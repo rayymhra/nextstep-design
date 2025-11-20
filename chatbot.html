@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Portfolio</title>
+    <title>Career Guide Advisor</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0f;
+            background: #ffffff;
             overflow-x: hidden;
             cursor: none;
         }
@@ -46,33 +46,34 @@
             align-items: center;
             gap: 10px;
             padding: 12px 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.05);
             backdrop-filter: blur(10px);
             border-radius: 30px;
-            color: white;
+            color: #333;
             font-size: 14px;
             text-decoration: none;
             transition: all 0.3s;
         }
 
         .header:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.1);
             transform: translateX(5px);
         }
 
         .logo {
             width: 24px;
             height: 24px;
-            background: white;
+            background: #4A90E2;
             border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            color: white;
         }
 
         .greeting {
-            color: rgba(255, 255, 255, 0.9);
+            color: #333;
             font-size: 28px;
             margin-bottom: 10px;
             text-align: center;
@@ -81,17 +82,28 @@
         h1 {
             font-size: clamp(48px, 12vw, 120px);
             font-weight: 800;
-            color: white;
+            background: linear-gradient(135deg, #4A90E2 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-align: center;
             margin-bottom: 40px;
             letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 600px;
+            line-height: 1.5;
         }
 
         .avatar {
             width: 200px;
             height: 200px;
             margin-bottom: 60px;
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
         }
 
         .input-container {
@@ -104,22 +116,24 @@
             width: 100%;
             padding: 20px 70px 20px 30px;
             font-size: 16px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(0, 0, 0, 0.1);
             border-radius: 50px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
-            color: white;
+            color: #333;
             outline: none;
             transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+            color: #999;
         }
 
         input:focus {
-            border-color: rgba(100, 150, 255, 0.5);
-            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(74, 144, 226, 0.5);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
         }
 
         .submit-btn {
@@ -130,7 +144,7 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4A90E2 0%, #764ba2 100%);
             border: none;
             color: white;
             cursor: pointer;
@@ -142,14 +156,14 @@
 
         .submit-btn:hover {
             transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.4);
         }
 
         .cursor {
             position: fixed;
             width: 20px;
             height: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(0, 0, 0, 0.8);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
@@ -160,7 +174,7 @@
             position: fixed;
             width: 6px;
             height: 6px;
-            background: white;
+            background: #333;
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
@@ -174,24 +188,32 @@
     <div class="cursor-dot"></div>
 
     <div class="content">
+        <a href="#" class="header">
+            <div class="logo">CG</div>
+            Career Guide
+        </a>
 
-        <div class="greeting">Hey, I'm Raphael 👋</div>
-        <h1>AI Portfolio</h1>
+        <div class="greeting">Hello, I'm your Career Guide 👋</div>
+        <h1>Career Advisor</h1>
+        <div class="subtitle">Your AI-powered career companion. Ask me anything about career paths, job search strategies, skill development, or professional growth.</div>
 
         <div class="avatar">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="100" cy="100" r="90" fill="#FFD6A5"/>
-                <ellipse cx="75" cy="90" rx="8" ry="12" fill="#333"/>
-                <ellipse cx="125" cy="90" rx="8" ry="12" fill="#333"/>
-                <path d="M 70 110 Q 100 125 130 110" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
-                <path d="M 50 50 Q 70 40 90 50" fill="#8B4513"/>
-                <path d="M 110 50 Q 130 40 150 50" fill="#8B4513"/>
-                <ellipse cx="100" cy="45" rx="60" ry="40" fill="#8B4513"/>
+                <circle cx="100" cy="100" r="90" fill="#4A90E2"/>
+                <rect x="60" y="120" width="80" height="40" rx="5" fill="#2C3E50"/>
+                <rect x="70" y="130" width="20" height="20" rx="3" fill="#ECF0F1"/>
+                <rect x="110" y="130" width="20" height="20" rx="3" fill="#ECF0F1"/>
+                <path d="M 70 100 Q 100 120 130 100" stroke="#2C3E50" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <circle cx="80" cy="80" r="8" fill="#2C3E50"/>
+                <circle cx="120" cy="80" r="8" fill="#2C3E50"/>
+                <path d="M 50 50 Q 70 40 90 50" fill="#2C3E50"/>
+                <path d="M 110 50 Q 130 40 150 50" fill="#2C3E50"/>
+                <ellipse cx="100" cy="45" rx="60" ry="40" fill="#2C3E50"/>
             </svg>
         </div>
 
         <div class="input-container">
-            <input type="text" placeholder="Ask me anything...">
+            <input type="text" placeholder="Ask about careers, skills, job search...">
             <button class="submit-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -227,11 +249,11 @@
 
             randomColor() {
                 const colors = [
-                    { h: 270, s: 80, l: 60 },
-                    { h: 210, s: 80, l: 60 },
-                    { h: 330, s: 80, l: 60 },
-                    { h: 150, s: 70, l: 60 },
-                    { h: 45, s: 90, l: 65 }
+                    { h: 210, s: 80, l: 70 }, // Professional blue
+                    { h: 180, s: 70, l: 70 }, // Career green
+                    { h: 270, s: 60, l: 70 }, // Success purple
+                    { h: 45, s: 90, l: 75 },  // Growth gold
+                    { h: 330, s: 70, l: 70 }  // Passion pink
                 ];
                 return colors[Math.floor(Math.random() * colors.length)];
             }
@@ -300,11 +322,11 @@
                     }
 
                     if (sum > 1) {
-                        const hue = totalWeight > 0 ? r / totalWeight : 270;
+                        const hue = totalWeight > 0 ? r / totalWeight : 210;
                         const sat = totalWeight > 0 ? g / totalWeight : 80;
-                        const light = totalWeight > 0 ? Math.min(b / totalWeight, 70) : 60;
+                        const light = totalWeight > 0 ? Math.min(b / totalWeight, 80) : 70;
                         
-                        const alpha = Math.min(sum * 0.6, 0.8);
+                        const alpha = Math.min(sum * 0.4, 0.6);
                         const rgb = hslToRgb(hue, sat, light);
 
                         for (let dy = 0; dy < 4; dy++) {
@@ -350,7 +372,7 @@
         }
 
         function animate() {
-            ctx.fillStyle = 'rgba(10, 10, 15, 0.15)';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             for (let i = metaballs.length - 1; i >= 0; i--) {
